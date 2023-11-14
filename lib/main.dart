@@ -111,3 +111,111 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
+
+
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(ToDoListApp());
+// }
+
+// class ToDoListApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'To-Do List',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: ToDoListScreen(),
+//     );
+//   }
+// }
+
+// class ToDoListScreen extends StatefulWidget {
+//   @override
+//   _ToDoListScreenState createState() => _ToDoListScreenState();
+// }
+
+// class _ToDoListScreenState extends State<ToDoListScreen> {
+//   Map<String, List<String>> tasks = {};
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('To-Do List'),
+//       ),
+//       body: ListView.builder(
+//         itemCount: tasks.length,
+//         itemBuilder: (context, index) {
+//           String category = tasks.keys.elementAt(index);
+//           List<String> categoryTasks = tasks[category]!;
+//           return ExpansionTile(
+//             title: Text(category),
+//             children: categoryTasks.map((task) {
+//               return ListTile(
+//                 title: Text(task),
+//               );
+//             }).toList(),
+//           );
+//         },
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           showDialog(
+//             context: context,
+//             builder: (context) {
+//               String newCategory = '';
+//               String newTask = '';
+//               return AlertDialog(
+//                 title: Text('Add Task'),
+//                 content: Column(
+//                   mainAxisSize: MainAxisSize.min,
+//                   children: [
+//                     TextField(
+//                       onChanged: (value) {
+//                         newCategory = value;
+//                       },
+//                       decoration: InputDecoration(
+//                         labelText: 'Category',
+//                       ),
+//                     ),
+//                     TextField(
+//                       onChanged: (value) {
+//                         newTask = value;
+//                       },
+//                       decoration: InputDecoration(
+//                         labelText: 'Task',
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//                 actions: [
+//                   FlatButton(
+//                     onPressed: () {
+//                       setState(() {
+//                         if (tasks.containsKey(newCategory)) {
+//                           tasks[newCategory]!.add(newTask);
+//                         } else {
+//                           tasks[newCategory] = [newTask];
+//                         }
+//                       });
+//                       Navigator.pop(context);
+//                     },
+//                     child: Text('Add'),
+//                   ),
+//                 ],
+//               );
+//             },
+//           );
+//         },
+//         child: Icon(Icons.add),
+//       ),
+//     );
+//   }
+// }
