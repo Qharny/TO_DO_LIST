@@ -46,35 +46,38 @@ class Home extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                        child: Container(
-                      margin: EdgeInsets.only(
-                        bottom: 20,
-                        right: 20,
-                        left: 20,
-                      ),
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(0.0, 0.0),
+                      child: Container(
+                          margin: EdgeInsets.only(
+                            bottom: 20,
+                            right: 20,
+                            left: 20,
                           ),
-                        ],
-                        borderRadius: BorderRadius.circular(20)
-                      ),
+                          padding:
+                              EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  offset: Offset(0.0, 0.0),
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(20)),
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: 'Add new item',
-                              border: InputBorder.none
-                            ),
-                          )
-                    ),
+                                hintText: 'Add new item',
+                                border: InputBorder.none),
+                          )),
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 20, right: 20),
                       child: ElevatedButton(
-                        child: Text('+', style: TextStyle(fontSize: 40,),),
+                        child: Text(
+                          '+',
+                          style: TextStyle(
+                            fontSize: 40,
+                          ),
+                        ),
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: tdBlue,
