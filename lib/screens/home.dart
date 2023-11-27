@@ -13,30 +13,79 @@ class Home extends StatelessWidget {
     return Scaffold(
         backgroundColor: tdBGColor,
         appBar: _buildAppBar(),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(
-            children: [
-              searchBox(),
-              Expanded(
-                child: ListView(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 50, bottom: 20),
-                      child: Text(
-                        'TO DOs...',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w500),
-                      ),
+        body: Stack(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Column(
+                children: [
+                  searchBox(),
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 50, bottom: 20),
+                          child: Text(
+                            'TO DOs...',
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        for (ToDo todo in todoList)
+                          items(
+                            todo: todo,
+                          ),
+                      ],
                     ),
-
-                    for (ToDo todo in todoList)
-                    items(todo: todo,),
+                  )
+                ],
+              ),
+            ),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(
+                        bottom: 20,
+                        right: 20,
+                        left: 20,
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 0.0),
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Add new item',
+                              border: InputBorder.none
+                            ),
+                          )
+                    ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20, right: 20),
+                      child: ElevatedButton(
+                        child: Text('+', style: TextStyle(fontSize: 40,),),
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: tdBlue,
+                          minimumSize: Size(60, 60),
+                          elevation: 10,
+                        ),
+                      ),
+                    )
                   ],
-                ),
-              )
-            ],
-          ),
+                ))
+          ],
         ));
   }
 
@@ -44,7 +93,9 @@ class Home extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: TextField(
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(0),
