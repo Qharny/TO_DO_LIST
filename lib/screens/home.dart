@@ -17,7 +17,6 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-
     _foundToDo = todoList;
     super.initState();
   }
@@ -40,7 +39,7 @@ class _HomeState extends State<Home> {
                         Container(
                           margin: EdgeInsets.only(top: 50, bottom: 20),
                           child: Text(
-                            'TO DOs...',
+                            'All',
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.w500),
                           ),
@@ -192,10 +191,17 @@ class _HomeState extends State<Home> {
         Container(
           height: 30,
           width: 30,
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset('assets/icon/avatar.jpg')),
-        )
+          child: Row(
+            children: [
+              Text('TODO'),
+              Icon(
+                Icons.note_alt_outlined,
+                color: Colors.black,
+                size: 30,
+              ),
+            ],
+          ),
+        ),
       ]),
     );
   }
