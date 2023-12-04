@@ -197,7 +197,7 @@ class _HomeState extends State<Home> {
               Icon(
                 Icons.note_alt_outlined,
                 color: Colors.black,
-                size: 30,
+                size: 50,
               ),
             ],
           ),
