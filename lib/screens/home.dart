@@ -28,11 +28,12 @@ class _HomeState extends State<Home> {
         appBar: _buildAppBar(),
         body: Stack(
           children: [
+            // Padding(padding: EdgeInsets.all(0)),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
                 children: [
-                  searchBox(),
+                  // searchBox(),
                   Expanded(
                     child: ListView(
                       children: [
@@ -190,15 +191,29 @@ class _HomeState extends State<Home> {
         ),
         Container(
           height: 30,
-          width: 30,
+          // width: 30,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('TODO'),
-              Icon(
-                Icons.note_alt_outlined,
-                color: Colors.black,
-                size: 50,
-              ),
+              Container(
+                margin: EdgeInsets.only(left: 0),
+                padding: EdgeInsets.all(0),
+                child: Row(children: [
+                  Text(
+                    'TODO',
+                    style: TextStyle(
+                      color: tdBlack,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Icon(
+                    Icons.note_alt_outlined,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                ]),
+              )
             ],
           ),
         ),
