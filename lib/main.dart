@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:to_do_list/screens/home.dart';
+import 'package:to_do_list/screens/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // removes the debug banner
       title: 'TO DO LIST',
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 }
